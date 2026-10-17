@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-in">
+      <a href="#about" class="brand" id="brand"></a>
+      <nav aria-label="Sections">
+        <a href="#experience">Experience</a><a href="#education">Education</a>
+        <a href="#skills">Skills</a><a href="#projects">Projects</a>
+      </nav>
+      <button class="btn nav-btn" id="manageToggle" aria-pressed="false">Manage content</button>
+    </div>
+  </header>
+
+  <section class="hero" id="about">
+    <div class="wrap hero-in">
+      <div class="hero-text" id="hero-text"></div>
+      <div class="hero-photo" id="hero-photo"></div>
+    </div>
+    <div class="wrap hero-tools">
+      <button class="btn ghost admin" data-edit-profile>Edit profile</button>
+      <button class="btn ghost danger admin" id="resetAll">Reset &amp; start over</button>
+    </div>
+  </section>
+
+  <div class="wrap stats" id="stats"></div>
+
+  <main class="wrap">
+    <section id="experience">
+      <div class="sec-head"><div><span class="kicker">Career</span><h2>Experience</h2></div><button class="btn ghost admin" data-add="experience">Add experience</button></div>
+      <div id="experience-list" class="timeline"></div>
+    </section>
+
+    <section id="education">
+      <div class="sec-head"><div><span class="kicker">Academics</span><h2>Education</h2></div><button class="btn ghost admin" data-add="education">Add education</button></div>
+      <div id="education-list" class="timeline"></div>
+    </section>
+
+    <section id="skills">
+      <div class="sec-head"><div><span class="kicker">Toolbox</span><h2>Skills</h2></div><button class="btn ghost admin" data-add="skills">Add skill</button></div>
+      <div id="skills-list" class="skill-groups"></div>
+    </section>
+
+    <section id="projects">
+      <div class="sec-head"><div><span class="kicker">Selected work</span><h2>Projects</h2></div><button class="btn ghost admin" data-add="projects">Add project</button></div>
+      <div id="projects-list" class="project-grid"></div>
+    </section>
+  </main>
+
+  <footer class="foot"><div class="wrap" id="foot"></div></footer>
+
+  <div class="modal" id="modal" hidden>
+    <form class="dialog" id="form" novalidate enctype="multipart/form-data" aria-labelledby="dlgTitle">
+      <h3 id="dlgTitle"></h3>
+      <p class="dlg-note" id="dlgNote"></p>
+      <div id="fields"></div>
+      <div class="form-error" id="formError" role="alert" hidden></div>
+      <div class="dlg-actions">
+        <button type="button" class="btn ghost" id="cancel">Cancel</button>
+        <button type="submit" class="btn primary" id="save">Save changes</button>
+      </div>
+    </form>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

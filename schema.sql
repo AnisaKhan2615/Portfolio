@@ -1,0 +1,44 @@
+CREATE TABLE IF NOT EXISTS profile (
+  id INT PRIMARY KEY,
+  full_name VARCHAR(120) NOT NULL,
+  title VARCHAR(150) NOT NULL,
+  email VARCHAR(150) NOT NULL,
+  phone VARCHAR(40),
+  location VARCHAR(120),
+  summary TEXT,
+  linkedin VARCHAR(255),
+  github VARCHAR(255),
+  image VARCHAR(255),
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+CREATE TABLE IF NOT EXISTS skills (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(80) NOT NULL,
+  category VARCHAR(80),
+  level TINYINT UNSIGNED
+);
+CREATE TABLE IF NOT EXISTS education (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  degree VARCHAR(150) NOT NULL,
+  institution VARCHAR(150) NOT NULL,
+  start_year VARCHAR(10),
+  end_year VARCHAR(10),
+  description TEXT
+);
+CREATE TABLE IF NOT EXISTS experience (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  role VARCHAR(150) NOT NULL,
+  company VARCHAR(150) NOT NULL,
+  start_date VARCHAR(20),
+  end_date VARCHAR(20),
+  description TEXT
+);
+CREATE TABLE IF NOT EXISTS projects (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(150) NOT NULL,
+  description TEXT,
+  tech_stack VARCHAR(255),
+  project_url VARCHAR(255),
+  repo_url VARCHAR(255),
+  image VARCHAR(255)
+);
